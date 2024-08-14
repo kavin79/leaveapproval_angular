@@ -1,0 +1,89 @@
+body {
+    position: relative; /* Ensures the logout button is positioned relative to the body */
+  }
+  
+  .logout-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #dc3545; /* Red color for logout */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+  
+  .my-leave-requests {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+  
+      thead {
+        background-color: #f2f2f2;
+  
+        th {
+          padding: 0.75rem;
+          text-align: left;
+          border-bottom: 2px solid #ddd;
+          font-weight: bold;
+          color: #555;
+        }
+      }
+  
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #f9f9f9;
+          }
+  
+          td {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+            color: #555;
+          }
+        }
+      }
+    }
+  
+    button {
+      display: block;
+      width: 150px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

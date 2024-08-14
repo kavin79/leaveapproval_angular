@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Edit Leave Request</h2>
+    <form (ngSubmit)="updateRequest()">
+      <div class="form-group">
+        <label for="reason">Reason:</label>
+        <textarea id="reason" name="reason" class="form-control" 
+                  [ngModel]="requestDetails && requestDetails.length > 0 ? requestDetails[0].reason : ''"
+                  (ngModelChange)="requestDetails[0].reason = $event" 
+                  rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Request</button>
+    </form>
+</div>

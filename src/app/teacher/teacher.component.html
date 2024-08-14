@@ -1,0 +1,35 @@
+<button class="pending-button" (click)="showPending()">Pending Requests</button>
+<button class="approved-button" (click)="showApprovedRejected()">Approved/Rejected Requests</button>
+
+<div *ngIf="showPendingRequests" class="pending-leave-requests">
+  <h2>Pending Leave Requests</h2>
+  <ul>
+    <li *ngFor="let request of leaverequests">
+      <div>
+        <p>RequestID: {{ request.requestId }}</p>
+        <p>Student: {{ request.studentId }}</p>
+        <p>Request Date: {{ request.requestDate | date: 'M/d/yy, h:mm a' }}</p>
+        <p>Reason: {{ request.reason }}</p>
+        <button class="approve-button" (click)="approveLeaveRequest(request.requestId)">Approve</button>
+        <button class="reject-button" (click)="rejectLeaveRequest(request.requestId)">Reject</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="showApprovedRequests" class="approved-rejected-requests">
+  <h2>Approved/Rejected Leave Requests</h2>
+  <ul>
+    <li *ngFor="let request of approvedRejectedRequests">
+      <div>
+        <p>RequestID: {{ request.requestId }}</p>
+        <p>Student: {{ request.studentId }}</p>
+        <p>Request Date: {{ request.requestDate | date: 'M/d/yy, h:mm a' }}</p>
+        <p>Status: {{ request.status }}</p>
+        <p>Reason: {{ request.reason }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<button class="logout-button" (click)="logout()">Logout</button>

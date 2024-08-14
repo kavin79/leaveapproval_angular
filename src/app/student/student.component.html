@@ -1,0 +1,30 @@
+<div *ngIf="leaveRequests" class="my-leave-requests">
+  <h2>My Leave Requests</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Request Date</th>
+        <th>Reason</th>
+        <th>Status</th>
+        <th>Approver ID</th>
+        <th>Approval Date</th>
+        <th>Action</th> <!-- Add Action column -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let request of leaveRequests">
+        <td>{{ request.requestDate | date: 'd/M/yy, h:mm a' }}</td>
+        <td>{{ request.reason }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.approverId }}</td>
+        <td>{{ request.approvalDate | date: 'd/M/yy, h:mm a' }}</td>
+        <td>
+          <button *ngIf="request.status === 'Pending'" (click)="editRequest(request.requestId)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="gotoadd()">Add</button>
+</div>
+
+<button class="logout-button" (click)="logout()">Logout</button>

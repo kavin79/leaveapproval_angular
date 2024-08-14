@@ -1,0 +1,13 @@
+<button (click)="goBack()" class="back-button">Back</button>
+<div class="leave-request-form-container">
+    <div class="leave-request-form">
+    <h2>Leave Request Form</h2>
+    <form (ngSubmit)="submit(reason.value)">
+      <div class="form-group">
+        <label for="reason">Reason:</label>
+        <input type="text" class="form-control" id="reason" name="reason" #reason required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit Leave Request</button>
+    </form>
+  </div>
+</div>
